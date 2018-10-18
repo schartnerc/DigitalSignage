@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 import time
@@ -92,7 +93,7 @@ def get_excel_data():
 
 if __name__ == '__main__':
     config = configparser.ConfigParser()
-    config.read(r'Console/parameters.ini')
+    config.read(os.path.join(os.path.dirname(__file__), 'parameters.ini'))
     config = config['RiseVision App']
     try:
         get_excel_data()
